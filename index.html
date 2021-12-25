@@ -1,1 +1,27 @@
-"Hello World" 
+# AliceBlue Access Token
+
+Using this server you can generate an access token to be used with AliceBlue REST API.
+
+## Generating Access Token
+
+```python
+import requests
+
+response = requests.post('url',params={'username':'your_username','password':'your_password','twoFA':'your_twoFA'})
+
+```
+
+It will return a json response with keys `message` and `access_token`. If a valid token is generated it message will be `null` or `None`.
+
+example response
+
+```python
+>>> response.json()
+
+{'access_token': '6_ouI9GVjQhH5UgwcsX_CTGURWuTXcb9n4jP4yx0phY.CZac7My9EAFGvDRqaIS4pk1mAwDzH9YCSLgNLRbkEqQ', 'message': None}
+
+```
+
+---
+
+###### Sending a post request means you have given your consent to login and generate access_token.
